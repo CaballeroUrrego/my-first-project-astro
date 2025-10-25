@@ -1,0 +1,31 @@
+---
+// Este componente muestra una galería de imágenes de cortes de cabello y estilos realizados en la barbería.
+---
+
+<section class="gallery">
+  <h2>Nuestra Galería</h2>
+  <div class="gallery-grid">
+    <img src="/assets/corte1.jpg" alt="Corte de cabello 1" />
+    <img src="/assets/corte2.jpg" alt="Corte de cabello 2" />
+    <img src="/assets/corte3.jpg" alt="Corte de cabello 3" />
+    <img src="/assets/corte4.jpg" alt="Corte de cabello 4" />
+    <img src="/assets/corte5.jpg" alt="Corte de cabello 5" />
+    <img src="/assets/corte6.jpg" alt="Corte de cabello 6" />
+  </div>
+</section>
+
+<style>
+  .gallery {
+    padding: 2rem;
+    text-align: center;
+  }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  .gallery img {
+    width: 100%;
+    border-radius: 8px;
+  }
+</style>

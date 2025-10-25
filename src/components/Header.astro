@@ -1,0 +1,143 @@
+---
+const navItems = [
+  { text: "Inicio", href: "#" },
+  { text: "Servicios", href: "#services" },
+  { text: "Sobre Nosotros", href: "#about" },
+  { text: "Galería", href: "#gallery" },
+  { text: "Contacto", href: "#contact" },
+];
+---
+
+<header class="header">
+  <nav class="nav-container">
+    <div class="logo">
+      <h1>BarberShop</h1>
+    </div>
+
+    <button class="mobile-menu-btn" aria-label="Menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <ul class="nav-links">
+      {
+        navItems.map((item) => (
+          <li>
+            <a href={item.href}>{item.text}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+</header>
+
+<style>
+  .header {
+    padding: 1rem 2rem;
+    background-color: #1a1a1a;
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffd700;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    font-size: 1.1rem;
+  }
+
+  .nav-links a:hover {
+    color: #ffd700;
+  }
+
+  .mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+
+  .mobile-menu-btn span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.3s;
+  }
+
+  @media (max-width: 768px) {
+    .mobile-menu-btn {
+      display: block;
+      z-index: 101;
+    }
+
+    .nav-links {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      height: 100vh;
+      width: 100%;
+      background-color: #1a1a1a;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: 0.3s ease-in-out;
+      gap: 3rem;
+    }
+
+    .nav-links.active {
+      right: 0;
+    }
+
+    .nav-links a {
+      font-size: 1.5rem;
+    }
+  }
+</style>
+
+<script>
+  const mobileBtn = document.querySelector(".mobile-menu-btn");
+  const navLinks = document.querySelector(".nav-links");
+
+  mobileBtn?.addEventListener("click", () => {
+    navLinks?.classList.toggle("active");
+    document.body.style.overflow = navLinks?.classList.contains("active")
+      ? "hidden"
+      : "";
+  });
+
+  // Cerrar menú al hacer click en un enlace
+  document.querySelectorAll(".nav-links a").forEach((link) => {
+    link.addEventListener("click", () => {
+      navLinks?.classList.remove("active");
+      document.body.style.overflow = "";
+    });
+  });
+</script>

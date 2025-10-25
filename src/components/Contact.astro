@@ -1,0 +1,141 @@
+---
+
+---
+
+<section id="contact" class="contact">
+  <h2>Contacto</h2>
+  <div class="contact-container">
+    <div class="contact-info">
+      <h3>Información</h3>
+      <ul>
+        <li>
+          <strong>📍 Dirección:</strong>
+          <p>Calle Principal 123, Ciudad</p>
+        </li>
+        <li>
+          <strong>📞 Teléfono:</strong>
+          <p>+34 123 456 789</p>
+        </li>
+        <li>
+          <strong>⏰ Horario:</strong>
+          <p>Lunes a Sábado: 9:00 - 20:00</p>
+          <p>Domingo: Cerrado</p>
+        </li>
+      </ul>
+    </div>
+
+    <form class="contact-form">
+      <div class="form-group">
+        <label for="name">Nombre</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Teléfono</label>
+        <input type="tel" id="phone" name="phone" required />
+      </div>
+
+      <div class="form-group">
+        <label for="service">Servicio</label>
+        <select id="service" name="service" required>
+          <option value="">Selecciona un servicio</option>
+          <option value="corte">Corte Clásico</option>
+          <option value="afeitado">Afeitado</option>
+          <option value="barba">Barba y Bigote</option>
+          <option value="combo">Corte + Barba</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Mensaje</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+      </div>
+
+      <button type="submit">Reservar Cita</button>
+    </form>
+  </div>
+</section>
+
+<style>
+  .contact {
+    padding: 5rem 2rem;
+    background-color: #1a1a1a;
+    color: white;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+
+  .contact-info ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .contact-info li {
+    margin-bottom: 2rem;
+  }
+
+  .contact-info p {
+    margin: 0.5rem 0;
+    color: #ccc;
+  }
+
+  .contact-form {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 10px;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    background: white;
+  }
+
+  button {
+    width: 100%;
+    padding: 1rem;
+    background: #ffd700;
+    border: none;
+    border-radius: 5px;
+    color: #1a1a1a;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  button:hover {
+    transform: scale(1.02);
+  }
+
+  @media (max-width: 768px) {
+    .contact-container {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+</style>
