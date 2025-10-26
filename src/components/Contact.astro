@@ -1,5 +1,5 @@
 ---
-
+// Contact.astro
 ---
 
 <section id="contact" class="contact">
@@ -139,3 +139,42 @@
     }
   }
 </style>
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector(".contact-form");
+
+    if (!form) {
+      console.error("No se encontro el formulario");
+      return;
+    }
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(e.target);
+      const data = {
+        name: formData.get("name"),
+        phone: formData.get("phone"),
+        service: formData.get("service"),
+        message: formData.get("message"),
+      };
+
+      console.log("Datos:", data);
+
+      try {
+        const response = await fetch("/.netlify/functions/send-notification", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        });
+
+        const result = await response.json();
+        alert(result.message || result.error);
+        e.target.reset();
+      } catch (err) {
+        console.error(err);
+        alert("Error al enviar la reserva. Intenta de nuevo.");
+      }
+    });
+  });
+</script>
