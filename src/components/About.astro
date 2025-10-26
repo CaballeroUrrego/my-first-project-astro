@@ -2,22 +2,139 @@
 const title = "Sobre Nosotros";
 const description =
   "En nuestra barbería, nos enorgullecemos de ofrecer un servicio excepcional y un ambiente acogedor. Nuestro equipo de barberos experimentados está dedicado a proporcionar cortes de cabello y afeitados de alta calidad. Con años de experiencia en la industria, estamos aquí para ayudarte a lucir y sentirte lo mejor posible.";
+
+const team = [
+  {
+    name: "Carlos Pérez",
+    role: "Barbero principal",
+    img: "/assets/team-1.jpg",
+  },
+  {
+    name: " Diego Ramos",
+    role: "Especialista en afeitados",
+    img: "/assets/team-2.jpg",
+  },
+  { name: "Luis Morales", role: "Estilista", img: "/assets/team-3.jpg" },
+];
 ---
 
 <section class="about">
-  <h2>{title}</h2>
-  <p>{description}</p>
-  <h3>Nuestra Historia</h3>
-  <p>
-    Desde nuestros inicios, hemos estado comprometidos con la excelencia en el
-    cuidado del cabello. Nuestra barbería ha sido un lugar de encuentro para la
-    comunidad, donde los clientes pueden relajarse y disfrutar de un servicio
-    personalizado.
-  </p>
-  <h3>Conoce a Nuestro Equipo</h3>
-  <p>
-    Contamos con un equipo de barberos apasionados y talentosos, cada uno con su
-    propio estilo y enfoque. Estamos aquí para escuchar tus necesidades y
-    ofrecerte el mejor servicio posible.
-  </p>
+  <div class="wrap">
+    <h2>{title}</h2>
+    <p class="lead">{description}</p>
+
+    <div class="history">
+      <h3>Nuestra Historia</h3>
+      <p>
+        Desde nuestros inicios, hemos estado comprometidos con la excelencia en
+        el cuidado del cabello. Nuestra barbería ha sido un lugar de encuentro
+        para la comunidad, donde los clientes pueden relajarse y disfrutar de un
+        servicio personalizado.
+      </p>
+    </div>
+
+    <div class="team">
+      <h3>Conoce a Nuestro Equipo</h3>
+      <div class="cards">
+        {
+          team.map((member) => (
+            <article class="member-card">
+              <div class="photo">
+                <img src={member.img} alt={member.name} loading="lazy" />
+              </div>
+              <div class="info">
+                <strong>{member.name}</strong>
+                <span class="role">{member.role}</span>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </div>
 </section>
+
+<style>
+  .about {
+    padding: 4rem 1.5rem;
+    background: #fff;
+    color: #111;
+  }
+  .wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+  }
+  .lead {
+    text-align: center;
+    color: #555;
+    margin-bottom: 2rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .history {
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+    color: #444;
+  }
+
+  .team h3 {
+    text-align: left;
+    margin-bottom: 1rem;
+    color: #111;
+  }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  .member-card {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    background: #fafafa;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.04);
+  }
+  .member-card .photo {
+    width: 72px;
+    height: 72px;
+    flex: 0 0 72px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .member-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .info strong {
+    display: block;
+    color: #111;
+  }
+  .role {
+    display: block;
+    color: #777;
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+  }
+
+  @media (max-width: 640px) {
+    .lead {
+      font-size: 0.95rem;
+      padding: 0 0.5rem;
+    }
+    .member-card {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+</style>
