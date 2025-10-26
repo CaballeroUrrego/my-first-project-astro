@@ -10,7 +10,7 @@ const team = [
     img: "/assets/team-1.jpg",
   },
   {
-    name: " Diego Ramos",
+    name: "Diego Ramos",
     role: "Especialista en afeitados",
     img: "/assets/team-2.jpg",
   },
@@ -18,7 +18,7 @@ const team = [
 ];
 ---
 
-<section class="about">
+<section id="about" class="about" tabindex="-1">
   <div class="wrap">
     <h2>{title}</h2>
     <p class="lead">{description}</p>
@@ -59,6 +59,9 @@ const team = [
     padding: 4rem 1.5rem;
     background: #fff;
     color: #111;
+    /* compensar header fijo y mejorar comportamiento al hacer scroll a anclas */
+    padding-top: 6rem;
+    scroll-margin-top: 90px;
   }
   .wrap {
     max-width: 1100px;
