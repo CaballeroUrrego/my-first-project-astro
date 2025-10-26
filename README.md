@@ -41,3 +41,33 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+
+
+# Instalar Netlify CLI (solo primera vez)
+npm install -g netlify-cli
+
+# Ejecutar en desarrollo
+netlify dev
+
+# URLs disponibles:
+# Frontend: http://localhost:4321
+# Functions: http://localhost:8888
+
+ CHECKLIST FINAL
+
+    Función responde en localhost:8888
+
+    Formulario envía datos correctamente
+
+    Telegram recibe mensajes completos
+
+    Variables entorno configuradas
+
+    No hay errores en consola navegador
+
+    Postman prueba exitosa
+
+    Colección Postman creada y probada
+
+    EJECUTAR ENN EL LOCAL        npm run dev 

@@ -9,6 +9,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.15.1"
+    "astro": "^5.15.1",
+    "axios": "^1.12.2"
+  },
+  "devDependencies": {
+    "netlify-cli": "^23.9.5"
   }
 }
