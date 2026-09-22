@@ -1,73 +1,81 @@
-# Astro Starter Kit: Minimal
+# My First Project Astro
 
-```sh
-npm create astro@latest -- --template minimal
+Proyecto web desarrollado con Astro para mostrar una landing page con secciones de presentación, servicios, galería, contacto y formulario de contacto. Está estructurado para servir contenido estático y también incluye integración con Netlify Functions para manejar notificaciones.
+
+## Descripción
+
+Este proyecto está pensado como una pequeña aplicación web moderna y ligera, utilizando Astro para generar páginas rápidas y optimizadas. La estructura incluye:
+
+- Página principal con hero, información de la empresa, servicios y contacto
+- Componentes reutilizables para cada sección
+- Estilos y contenido organizados por componentes
+- Integración con Netlify para funciones serverless
+- Uso de Axios y dependencias de Astro para el desarrollo del sitio
+
+## Requisitos
+
+- Node.js 18 o superior
+- npm
+- Git (opcional, para clonar y versionar el proyecto)
+
+## Instalación
+
+1. Clona el repositorio o entra a la carpeta del proyecto:
+
+```bash
+cd "c:\Users\se302\Documents\PROGRAMACION\my-first-project-astro"
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+2. Instala las dependencias:
 
-## 🚀 Project Structure
+```bash
+npm install
+```
 
-Inside of your Astro project, you'll see the following folders and files:
+## Ejecución en desarrollo
+
+Ejecuta el proyecto localmente con:
+
+```bash
+npm run dev
+```
+
+Luego abre en tu navegador:
+
+```text
+http://localhost:4321
+```
+```
+
+Esto normalmente deja disponible:
+
+- Frontend: http://localhost:4321
+- Functions: http://localhost:8888
+
+## Estructura principal
 
 ```text
 /
 ├── public/
 ├── src/
+│   ├── components/
+│   ├── layouts/
 │   └── pages/
-│       └── index.astro
-└── package.json
+├── astro.config.mjs
+├── package.json
+├── tsconfig.json
+├── netlify.toml
+├── README.md
+└── .gitignore
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Comandos útiles
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+```bash
+npm run dev
+npm run build
+npm run preview
+npm run astro -- --help
+```
 
 
-
-# Instalar Netlify CLI (solo primera vez)
-npm install -g netlify-cli
-
-# Ejecutar en desarrollo
-netlify dev
-
-# URLs disponibles:
-# Frontend: http://localhost:4321
-# Functions: http://localhost:8888
-
- CHECKLIST FINAL
-
-    Función responde en localhost:8888
-
-    Formulario envía datos correctamente
-
-    Telegram recibe mensajes completos
-
-    Variables entorno configuradas
-
-    No hay errores en consola navegador
-
-    Postman prueba exitosa
-
-    Colección Postman creada y probada
-
-    EJECUTAR ENN EL LOCAL        npm run dev 
